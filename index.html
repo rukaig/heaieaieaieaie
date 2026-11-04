@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#05010d" />
+    <title>Galaxy of Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main id="stage" aria-label="Interactive galaxy of love">
+      <div id="canvas-host"></div>
+      <header class="topbar">
+        <div class="wordmark"><span aria-hidden="true">✦</span> <span id="site-title"></span></div>
+        <p id="header-subtitle"></p>
+      </header>
+      <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false">
+        <span id="music-icon" aria-hidden="true">♥</span>
+      </button>
+      <audio id="background-music" loop preload="auto"></audio>
+      <div id="hint" class="hint" hidden>
+        <span aria-hidden="true">✧</span><span id="hint-copy"></span><span aria-hidden="true">✧</span>
+      </div>
+      <div id="loading" class="loading-screen" role="status" aria-live="polite">
+        <div class="loading-heart" aria-hidden="true">♥</div>
+        <div id="loading-copy" class="loading-copy"></div>
+        <div id="loading-progress" class="loading-progress">0%</div>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+        <div id="loading-count" class="loading-count"></div>
+      </div>
+      <div id="load-error" class="load-error" role="alert" hidden></div>
+      <section id="intro" class="screen-overlay" aria-label="Welcome" hidden>
+        <article class="intro-card">
+          <div class="intro-pin" aria-hidden="true">♥</div>
+          <img id="intro-avatar" class="intro-avatar" alt="" />
+          <h1 id="intro-title" lang="ko"></h1>
+          <p id="intro-subtitle" class="intro-subtitle"></p>
+          <button id="enter-button" class="pill-button" type="button"></button>
+        </article>
+      </section>
+      <section id="photo-overlay" class="screen-overlay memory-overlay" aria-label="Photo memory" hidden>
+        <article class="memory-card">
+          <div class="intro-pin" aria-hidden="true">♥</div>
+          <button id="prev-photo" class="card-arrow arrow-prev" type="button">‹</button>
+          <button id="next-photo" class="card-arrow arrow-next" type="button">›</button>
+          <div class="memory-image-wrap">
+            <img id="memory-image" class="memory-image" alt="" />
+          </div>
+          <h1 id="memory-title" lang="ko"></h1>
+          <p id="memory-subtitle"></p>
+          <button id="back-button" class="pill-button back-button" type="button">
+            <span id="back-label"></span><span aria-hidden="true">♥</span>
+          </button>
+          <div id="memory-count" class="memory-count"></div>
+        </article>
+        <div class="speech-heart" aria-hidden="true">♥</div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script type="module" src="./script.js"></script>
+
+  </body>
+</html>
